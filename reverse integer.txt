@@ -1,0 +1,47 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+
+    int reverse(int x) {
+        int i,q,a,z,n,m,count,counter;counter=0;count=0;z=1;
+        q=x;
+        m=x;
+        n=0;
+        
+        do
+        {
+         m=m/10;
+         counter++;   
+        }while(m!=0);
+        
+        count=counter;
+        
+        do
+        {
+         z=1;    
+        for(i=1;i<=count;i++)
+        {
+            z=z*10;
+        }
+         a=x%10;
+         x=x/10;
+         a=a*z;
+         n=n+a;
+         count--;
+        }while(x!=0);
+        if(q<0)
+        {
+            n=0-n;
+        }
+        return n;
+    }
+
+int main()
+{
+    int x,k;k=0;
+    scanf("%d",&x);
+    k = reverse(x);
+    printf("%d",k);
+    
+    return 0;
+}
